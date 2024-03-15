@@ -71,6 +71,10 @@ POST /report-api/v1/private/report
       - Schema changed
         - Items changed
           - Property 'OneOf' changed
+            - Schema #/components/schemas/ServerReportRequest modified
+              - Properties changed
+                - Modified property: endpoint
+                  - New enum values: [/open-banking/payments/v3/consents /open-banking/payments/v3/consents/{consentId} /open-banking/payments/v3/pix/payments /open-banking/payments/v3/pix/payments/{paymentId}]
             - Schema #/components/schemas/ClientReportRequest modified
               - Properties changed
                 - Modified property: additionalInfo
@@ -92,10 +96,6 @@ POST /report-api/v1/private/report
                     - New property: status
                     - New property: webhookEnable
                     - New property: webhookInteractionId
-                - Modified property: endpoint
-                  - New enum values: [/open-banking/payments/v3/consents /open-banking/payments/v3/consents/{consentId} /open-banking/payments/v3/pix/payments /open-banking/payments/v3/pix/payments/{paymentId}]
-            - Schema #/components/schemas/ServerReportRequest modified
-              - Properties changed
                 - Modified property: endpoint
                   - New enum values: [/open-banking/payments/v3/consents /open-banking/payments/v3/consents/{consentId} /open-banking/payments/v3/pix/payments /open-banking/payments/v3/pix/payments/{paymentId}]
 - Responses changed
@@ -153,6 +153,10 @@ PUT /report-api/v1/private/report/{reportId}
     - Modified media type: application/json
       - Schema changed
         - Property 'OneOf' changed
+          - Schema #/components/schemas/ServerReportRequest modified
+            - Properties changed
+              - Modified property: endpoint
+                - New enum values: [/open-banking/payments/v3/consents /open-banking/payments/v3/consents/{consentId} /open-banking/payments/v3/pix/payments /open-banking/payments/v3/pix/payments/{paymentId}]
           - Schema #/components/schemas/ClientReportRequest modified
             - Properties changed
               - Modified property: additionalInfo
@@ -174,10 +178,6 @@ PUT /report-api/v1/private/report/{reportId}
                   - New property: status
                   - New property: webhookEnable
                   - New property: webhookInteractionId
-              - Modified property: endpoint
-                - New enum values: [/open-banking/payments/v3/consents /open-banking/payments/v3/consents/{consentId} /open-banking/payments/v3/pix/payments /open-banking/payments/v3/pix/payments/{paymentId}]
-          - Schema #/components/schemas/ServerReportRequest modified
-            - Properties changed
               - Modified property: endpoint
                 - New enum values: [/open-banking/payments/v3/consents /open-banking/payments/v3/consents/{consentId} /open-banking/payments/v3/pix/payments /open-banking/payments/v3/pix/payments/{paymentId}]
 - Responses changed
