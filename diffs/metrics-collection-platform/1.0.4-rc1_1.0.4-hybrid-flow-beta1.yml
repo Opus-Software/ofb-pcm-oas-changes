@@ -1,0 +1,10 @@
+﻿### New Endpoints: None
+-----------------------
+### Deleted Endpoints: 4
+------------------------
+POST /report-api/v1/opendata/report  
+POST /report-api/v1/private/report  
+GET /report-api/v1/private/report/{reportId}  
+PUT /report-api/v1/private/report/{reportId}  
+### Modified Endpoints: None
+----------------------------
