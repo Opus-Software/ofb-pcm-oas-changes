@@ -1,0 +1,17 @@
+﻿### New Endpoints: 6
+--------------------
+POST /report-api/v1/opendata/report  
+GET /report-api/v1/opendata/report/{reportId}  
+PUT /report-api/v1/opendata/report/{reportId}  
+POST /report-api/v1/private/report  
+GET /report-api/v1/private/report/{reportId}  
+PUT /report-api/v1/private/report/{reportId}  
+### Deleted Endpoints: None
+---------------------------
+### Modified Endpoints: None
+----------------------------
+Security Requirements changed
+- New security requirements: PCMAccessToken
+Servers changed
+- New server: https://api.pcm.openfinancebrasil.org.br
+- New server: https://api.pcm.sandbox.openfinancebrasil.org.br

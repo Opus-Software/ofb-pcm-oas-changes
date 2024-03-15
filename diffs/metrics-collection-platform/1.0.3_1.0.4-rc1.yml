@@ -1,0 +1,189 @@
+﻿### New Endpoints: 6
+--------------------
+POST /report-api/v2/hybrid-flow/client/redirect-target-with-errors  
+POST /report-api/v2/hybrid-flow/client/redirect-target-without-errors  
+POST /report-api/v2/hybrid-flow/client/redirect-to-server  
+POST /report-api/v2/hybrid-flow/server/authenticated  
+POST /report-api/v2/hybrid-flow/server/redirect-target  
+POST /report-api/v2/hybrid-flow/server/redirect-to-client  
+### Deleted Endpoints: None
+---------------------------
+### Modified Endpoints: 4
+-------------------------
+POST /report-api/v1/opendata/report
+- Description changed from 'Inclusão de reportes de dados abertos na plataforma. Ao enviar um lote de reportes, a plataforma vai fazer o processo de validação sintática de cada reporte de maneira síncrona e devolver o resultado dessa validação na resposta. O status HTTP de retorno será 200 caso **todos** dos reportes enviados forem aceitos. Caso pelo menos 1 reporte esteja inconsistente, o status de retorno será 207 - vide documentação de cada status de retorno para maiores informações. 
+Os dados que são inseridos na API de Reporte são sempre processados de maneira assíncrona, e sua persistência se utiliza de consistência posterior (eventual consistency), portanto, um registro tem um tempo de processamento em que ele não estará disponível para consulta até que ele seja persistido.
+O limite de registros de cada lote é de 5.000 registros.
+' to '
+Inclusão de reportes de dados abertos na plataforma. Ao enviar um lote de reportes, a plataforma vai fazer o processo de validação sintática de cada reporte de maneira síncrona e devolver o resultado dessa validação na resposta. O status HTTP de retorno será 200 caso **todos** dos reportes enviados forem aceitos. Caso pelo menos 1 reporte esteja inconsistente, o status de retorno será 207 - vide documentação de cada status de retorno para maiores informações. 
+Os dados que são inseridos na API de Reporte são sempre processados de maneira assíncrona, e sua persistência se utiliza de consistência posterior (eventual consistency), portanto, um registro tem um tempo de processamento em que ele não estará disponível para consulta até que ele seja persistido.
+O limite de registros de cada lote é de 5.000 registros.
+'
+- Request body changed
+  - Content changed
+    - Modified media type: application/json
+      - Schema changed
+        - Items changed
+          - Properties changed
+            - Modified property: endpoint
+              - New enum values: [/open-banking/capitalization-bonds/v1/bonds /open-banking/investments/v1/funds /open-banking/exchange/v1/online-rates /open-banking/exchange/v1/vet-values /open-banking/acquiring-services/v1/personals /open-banking/acquiring-services/v1/businesses /open-banking/pension/v1/risk-coverages /open-banking/insurance/v1/automotives /open-banking/insurance/v1/homes /open-banking/insurance/v1/personals]
+- Responses changed
+  - Modified response: 200
+    - Content changed
+      - Modified media type: application/json
+        - Schema changed
+          - Items changed
+            - Description changed from 'Representa os dados que serão retornados pelas operações de inclusão de reportes Opendata' to 'Representa os dados que serão retornados pelas operações de inclusão de reportes.'
+            - Required changed
+              - New required property: status
+            - Properties changed
+              - New property: correlationId
+              - New property: status
+        - Examples changed
+          - Modified example: Todos Processados
+            - Value changed from [map[reportId:424ad55c-36cc-4077-b85e-c22ea984cc4a] map[reportId:4095388d-f44f-499a-a9a7-2dbffce1bb8a]] to [map[reportId:424ad55c-36cc-4077-b85e-c22ea984cc4a status:ACCEPTED] map[reportId:4095388d-f44f-499a-a9a7-2dbffce1bb8a status:ACCEPTED]]
+  - Modified response: 207
+    - Content changed
+      - Modified media type: application/json
+        - Schema changed
+          - Items changed
+            - Description changed from 'Representa os dados que serão retornados pelas operações de inclusão de reportes Opendata' to 'Representa os dados que serão retornados pelas operações de inclusão de reportes.'
+            - Required changed
+              - New required property: status
+            - Properties changed
+              - New property: correlationId
+              - New property: status
+        - Examples changed
+          - Modified example: Primeiro registro com falha
+            - Value changed from [map[message:Missing fields: 'processTimespan' reportId:424ad55c-36cc-4077-b85e-c22ea984cc4a] map[reportId:4095388d-f44f-499a-a9a7-2dbffce1bb8a] map[reportId:0f3fcceb-39f6-41b4-a75d-8444244bd836]] to [map[message:Missing fields: 'uri' reportId:424ad55c-36cc-4077-b85e-c22ea984cc4a status:DISCARDED] map[reportId:4095388d-f44f-499a-a9a7-2dbffce1bb8a status:ACCEPTED] map[reportId:0f3fcceb-39f6-41b4-a75d-8444244bd836 status:ACCEPTED]]
+          - Modified example: Todos registros com falha
+            - Value changed from [map[message:Missing fields: 'statusCode' reportId:424ad55c-36cc-4077-b85e-c22ea984cc4a] map[message:Missing fields: 'additionalInfo' reportId:4095388d-f44f-499a-a9a7-2dbffce1bb8a] map[message:Missing fields: 'httpMethod' reportId:0f3fcceb-39f6-41b4-a75d-8444244bd836]] to [map[message:Missing fields: 'uri' reportId:424ad55c-36cc-4077-b85e-c22ea984cc4a status:DISCARDED] map[message:Missing fields: 'additionalInfo' reportId:4095388d-f44f-499a-a9a7-2dbffce1bb8a status:DISCARDED] map[message:Missing fields: 'httpMethod' reportId:0f3fcceb-39f6-41b4-a75d-8444244bd836 status:DISCARDED]]
+  - Modified response: 429
+    - Content changed
+      - Modified media type: application/json
+        - Examples changed
+          - Modified example: NotAcceptable
+            - Value changed from map[message:Unsupported Media Type] to map[message:Too Many Requests]
+POST /report-api/v1/private/report
+- Request body changed
+  - Content changed
+    - Modified media type: application/json
+      - Schema changed
+        - Items changed
+          - Property 'OneOf' changed
+            - Schema #/components/schemas/ClientReportRequest modified
+              - Properties changed
+                - Modified property: additionalInfo
+                  - Properties changed
+                    - New property: authenticatorAttachment
+                    - New property: authorisationFlow
+                    - New property: clientIp
+                    - New property: consentId
+                    - New property: dropReason
+                    - New property: enrollmentId
+                    - New property: errorCodes
+                    - New property: localInstrument
+                    - New property: personType
+                    - New property: platform
+                    - New property: rejectReason
+                    - New property: rejectionReasonCode
+                    - New property: rejectionReasonDetail
+                    - New property: rp
+                    - New property: status
+                    - New property: webhookEnable
+                    - New property: webhookInteractionId
+                - Modified property: endpoint
+                  - New enum values: [/open-banking/payments/v3/consents /open-banking/payments/v3/consents/{consentId} /open-banking/payments/v3/pix/payments /open-banking/payments/v3/pix/payments/{paymentId}]
+            - Schema #/components/schemas/ServerReportRequest modified
+              - Properties changed
+                - Modified property: endpoint
+                  - New enum values: [/open-banking/payments/v3/consents /open-banking/payments/v3/consents/{consentId} /open-banking/payments/v3/pix/payments /open-banking/payments/v3/pix/payments/{paymentId}]
+- Responses changed
+  - Modified response: 429
+    - Content changed
+      - Modified media type: application/json
+        - Examples changed
+          - Modified example: NotAcceptable
+            - Value changed from map[message:Unsupported Media Type] to map[message:Too Many Requests]
+GET /report-api/v1/private/report/{reportId}
+- Responses changed
+  - Modified response: 200
+    - Content changed
+      - Modified media type: application/json
+        - Schema changed
+          - Property 'AllOf' changed
+            - Schema #/components/schemas/ClientReportRequest modified
+              - Properties changed
+                - Modified property: additionalInfo
+                  - Properties changed
+                    - New property: authenticatorAttachment
+                    - New property: authorisationFlow
+                    - New property: clientIp
+                    - New property: consentId
+                    - New property: dropReason
+                    - New property: enrollmentId
+                    - New property: errorCodes
+                    - New property: localInstrument
+                    - New property: personType
+                    - New property: platform
+                    - New property: rejectReason
+                    - New property: rejectionReasonCode
+                    - New property: rejectionReasonDetail
+                    - New property: rp
+                    - New property: status
+                    - New property: webhookEnable
+                    - New property: webhookInteractionId
+                - Modified property: endpoint
+                  - New enum values: [/open-banking/payments/v3/consents /open-banking/payments/v3/consents/{consentId} /open-banking/payments/v3/pix/payments /open-banking/payments/v3/pix/payments/{paymentId}]
+            - Schema #2 modified
+              - Properties changed
+                - Modified property: reportId
+                  - Description changed from 'Identificador único do registro criado na plataforma de Coleta de Métricas.
+' to 'Identificador único do registro criado na Platforma de Coleta de Métricas.
+'
+  - Modified response: 429
+    - Content changed
+      - Modified media type: application/json
+        - Examples changed
+          - Modified example: NotAcceptable
+            - Value changed from map[message:Unsupported Media Type] to map[message:Too Many Requests]
+PUT /report-api/v1/private/report/{reportId}
+- Request body changed
+  - Content changed
+    - Modified media type: application/json
+      - Schema changed
+        - Property 'OneOf' changed
+          - Schema #/components/schemas/ClientReportRequest modified
+            - Properties changed
+              - Modified property: additionalInfo
+                - Properties changed
+                  - New property: authenticatorAttachment
+                  - New property: authorisationFlow
+                  - New property: clientIp
+                  - New property: consentId
+                  - New property: dropReason
+                  - New property: enrollmentId
+                  - New property: errorCodes
+                  - New property: localInstrument
+                  - New property: personType
+                  - New property: platform
+                  - New property: rejectReason
+                  - New property: rejectionReasonCode
+                  - New property: rejectionReasonDetail
+                  - New property: rp
+                  - New property: status
+                  - New property: webhookEnable
+                  - New property: webhookInteractionId
+              - Modified property: endpoint
+                - New enum values: [/open-banking/payments/v3/consents /open-banking/payments/v3/consents/{consentId} /open-banking/payments/v3/pix/payments /open-banking/payments/v3/pix/payments/{paymentId}]
+          - Schema #/components/schemas/ServerReportRequest modified
+            - Properties changed
+              - Modified property: endpoint
+                - New enum values: [/open-banking/payments/v3/consents /open-banking/payments/v3/consents/{consentId} /open-banking/payments/v3/pix/payments /open-banking/payments/v3/pix/payments/{paymentId}]
+- Responses changed
+  - Modified response: 429
+    - Content changed
+      - Modified media type: application/json
+        - Examples changed
+          - Modified example: NotAcceptable
+            - Value changed from map[message:Unsupported Media Type] to map[message:Too Many Requests]
