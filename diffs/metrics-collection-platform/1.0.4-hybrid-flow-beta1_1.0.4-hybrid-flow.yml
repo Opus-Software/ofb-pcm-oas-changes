@@ -1,1 +1,30 @@
-﻿No endpoint changes
+﻿### New Endpoints: None
+-----------------------
+### Deleted Endpoints: None
+---------------------------
+### Modified Endpoints: 6
+-------------------------
+POST /report-api/v2/hybrid-flow/client/redirect-target-with-errors
+- Description changed from 'Inclusão de relatório de redirecionamento com erro para o destino na Platforma. Ao enviar um relatório, a Platforma vai fazer o processo de validação de maneira síncrona e devolver o resultado dessa validação na resposta. O status HTTP de retorno será 200 caso o reporte enviado seja aceito.
+' to 'Inclusão de relatório de redirecionamento com erro para o destino na Plataforma. Ao enviar um relatório, a Plataforma vai fazer o processo de validação de maneira síncrona e devolver o resultado dessa validação na resposta. O status HTTP de retorno será 200 caso o reporte enviado seja aceito.
+'
+POST /report-api/v2/hybrid-flow/client/redirect-target-without-errors
+- Description changed from 'Inclusão de relatório de redirecionamento sem erro para o destino na Platforma. Ao enviar um relatório, a Platforma vai fazer o processo de validação de maneira síncrona e devolver o resultado dessa validação na resposta. O status HTTP de retorno será 200 caso o reporte enviado seja aceito.
+' to 'Inclusão de relatório de redirecionamento sem erro para o destino na Plataforma. Ao enviar um relatório, a Plataforma vai fazer o processo de validação de maneira síncrona e devolver o resultado dessa validação na resposta. O status HTTP de retorno será 200 caso o reporte enviado seja aceito.
+'
+POST /report-api/v2/hybrid-flow/client/redirect-to-server
+- Description changed from 'Inclusão de relatório de redirecionamento para o servidor na Platforma. Ao enviar um relatório, a Platforma vai fazer o processo de validação de maneira síncrona e devolver o resultado dessa validação na resposta. O status HTTP de retorno será 200 caso o reporte enviado seja aceito.
+' to 'Inclusão de relatório de redirecionamento para o servidor na Plataforma. Ao enviar um relatório, a Plataforma vai fazer o processo de validação de maneira síncrona e devolver o resultado dessa validação na resposta. O status HTTP de retorno será 200 caso o reporte enviado seja aceito.
+'
+POST /report-api/v2/hybrid-flow/server/authenticated
+- Description changed from 'Inclusão de relatório de autenticação na Platforma. Ao enviar um relatório, a Platforma vai fazer o processo de validação de maneira síncrona e devolver o resultado dessa validação na resposta. O status HTTP de retorno será 200 caso o reporte enviado seja aceito.
+' to 'Inclusão de relatório de autenticação na Plataforma. Ao enviar um relatório, a Plataforma vai fazer o processo de validação de maneira síncrona e devolver o resultado dessa validação na resposta. O status HTTP de retorno será 200 caso o reporte enviado seja aceito.
+'
+POST /report-api/v2/hybrid-flow/server/redirect-target
+- Description changed from 'Inclusão de relatório de redirecionamento para o destino na Platforma. Ao enviar um relatório, a Platforma vai fazer o processo de validação de maneira síncrona e devolver o resultado dessa validação na resposta. O status HTTP de retorno será 200 caso o reporte enviado seja aceito.
+' to 'Inclusão de relatório de redirecionamento para o destino na Plataforma. Ao enviar um relatório, a Plataforma vai fazer o processo de validação de maneira síncrona e devolver o resultado dessa validação na resposta. O status HTTP de retorno será 200 caso o reporte enviado seja aceito.
+'
+POST /report-api/v2/hybrid-flow/server/redirect-to-client
+- Description changed from 'Inclusão de relatório de redirecionamento para o cliente na Platforma. Ao enviar um relatório, a Platforma vai fazer o processo de validação de maneira síncrona e devolver o resultado dessa validação na resposta. O status HTTP de retorno será 200 caso o reporte enviado seja aceito.
+' to 'Inclusão de relatório de redirecionamento para o cliente na Plataforma. Ao enviar um relatório, a Plataforma vai fazer o processo de validação de maneira síncrona e devolver o resultado dessa validação na resposta. O status HTTP de retorno será 200 caso o reporte enviado seja aceito.
+'
