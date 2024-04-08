@@ -6,33 +6,90 @@
 -------------------------
 POST /report-api/v2/hybrid-flow/client/redirect-target-with-errors
 - Description changed from 'Inclusão de relatório de redirecionamento com erro para o destino na Platforma. Ao enviar um relatório, a Platforma vai fazer o processo de validação de maneira síncrona e devolver o resultado dessa validação na resposta. O status HTTP de retorno será 200 caso o reporte enviado seja aceito.
-' to 'Inclusão de report de redirecionamento com erro para o destino na Plataforma. Ao enviar um report, a Plataforma vai fazer o processo de validação de maneira síncrona e devolver o resultado dessa validação na resposta. O status HTTP de retorno será 200 caso o reporte enviado seja aceito.
-'
-POST /report-api/v2/hybrid-flow/client/redirect-target-without-errors
-- Description changed from 'Inclusão de relatório de redirecionamento sem erro para o destino na Platforma. Ao enviar um relatório, a Platforma vai fazer o processo de validação de maneira síncrona e devolver o resultado dessa validação na resposta. O status HTTP de retorno será 200 caso o reporte enviado seja aceito.
-' to 'Inclusão de report de redirecionamento sem erro para o destino na Plataforma. Ao enviar um report, a Plataforma vai fazer o processo de validação de maneira síncrona e devolver o resultado dessa validação na resposta. O status HTTP de retorno será 200 caso o reporte enviado seja aceito.
-'
-POST /report-api/v2/hybrid-flow/client/redirect-to-server
-- Description changed from 'Inclusão de relatório de redirecionamento para o servidor na Platforma. Ao enviar um relatório, a Platforma vai fazer o processo de validação de maneira síncrona e devolver o resultado dessa validação na resposta. O status HTTP de retorno será 200 caso o reporte enviado seja aceito.
-' to 'Inclusão de report de redirecionamento para o servidor na Plataforma. Ao enviar um report, a Plataforma vai fazer o processo de validação de maneira síncrona e devolver o resultado dessa validação na resposta. O status HTTP de retorno será 200 caso o reporte enviado seja aceito.
-'
-POST /report-api/v2/hybrid-flow/server/authenticated
-- Description changed from 'Inclusão de relatório de autenticação na Platforma. Ao enviar um relatório, a Platforma vai fazer o processo de validação de maneira síncrona e devolver o resultado dessa validação na resposta. O status HTTP de retorno será 200 caso o reporte enviado seja aceito.
-' to 'Inclusão de report de autenticação na plataforma que deverá ser enviado após o client se autenticar / entrar no app e antes de autorizar o consentimento. Ao enviar um report, a Plataforma vai fazer o processo de validação de maneira síncrona e devolver o resultado dessa validação na resposta. O status HTTP de retorno será 200 caso o reporte enviado seja aceito.
-'
-POST /report-api/v2/hybrid-flow/server/redirect-target
-- Description changed from 'Inclusão de relatório de redirecionamento para o destino na Platforma. Ao enviar um relatório, a Platforma vai fazer o processo de validação de maneira síncrona e devolver o resultado dessa validação na resposta. O status HTTP de retorno será 200 caso o reporte enviado seja aceito.
-' to 'Inclusão de report da chegada de usuario no sistema da transmissora/dentendora para autenticação. Deve ser enviado antes da autenticação do usuário. Ao enviar um report, a Plataforma vai fazer o processo de validação de maneira síncrona e devolver o resultado dessa validação na resposta. O status HTTP de retorno será 200 caso o reporte enviado seja aceito.
+' to 'Inclusão do report de retorno do usuário pelo Hybrid Flow contendo o código de erro. Ao enviar um report, a Plataforma vai fazer o processo de validação de maneira síncrona e devolver o resultado dessa validação na resposta. O status HTTP de retorno será 200 caso o reporte enviado seja aceito.
 '
 - Request body changed
   - Content changed
     - Modified media type: application/json
       - Schema changed
+        - Required changed
+          - New required property: clientOrgId
         - Properties changed
+          - New property: clientOrgId
+          - Modified property: error
+            - Example changed from null to 'Código de erro retornado no payload do Hybrid Flow'
+          - Modified property: osVersion
+            - Example changed from null to 'String obtida pelo user-agent/app utilizando a infraestrutura de consulta disponível em seu ambiente'
+POST /report-api/v2/hybrid-flow/client/redirect-target-without-errors
+- Description changed from 'Inclusão de relatório de redirecionamento sem erro para o destino na Platforma. Ao enviar um relatório, a Platforma vai fazer o processo de validação de maneira síncrona e devolver o resultado dessa validação na resposta. O status HTTP de retorno será 200 caso o reporte enviado seja aceito.
+' to 'Inclusão de report de retorno de usuário pelo Hybrid Flow com sucesso. Ao enviar um report, a Plataforma vai fazer o processo de validação de maneira síncrona e devolver o resultado dessa validação na resposta. O status HTTP de retorno será 200 caso o reporte enviado seja aceito.
+'
+- Request body changed
+  - Content changed
+    - Modified media type: application/json
+      - Schema changed
+        - Required changed
+          - New required property: clientOrgId
+        - Properties changed
+          - New property: clientOrgId
+          - Modified property: osVersion
+            - Example changed from null to 'String obtida pelo user-agent/app utilizando a infraestrutura de consulta disponível em seu ambiente'
+POST /report-api/v2/hybrid-flow/client/redirect-to-server
+- Description changed from 'Inclusão de relatório de redirecionamento para o servidor na Platforma. Ao enviar um relatório, a Platforma vai fazer o processo de validação de maneira síncrona e devolver o resultado dessa validação na resposta. O status HTTP de retorno será 200 caso o reporte enviado seja aceito.
+' to 'Inclusão do report de início de redirecionamento de um usuário do receptor/iniciador para a transmissora/detentora. Ao enviar um report, a Plataforma vai fazer o processo de validação de maneira síncrona e devolver o resultado dessa validação na resposta. O status HTTP de retorno será 200 caso o report enviado seja aceito. Caso seja obtido um status HTTP diferente, a integração deve ser corrigida. Observe no response body o detalhamento do erro e corrija a implementação.
+'
+- Request body changed
+  - Content changed
+    - Modified media type: application/json
+      - Schema changed
+        - Required changed
+          - New required property: clientOrgId
+        - Properties changed
+          - New property: clientOrgId
+          - Modified property: osVersion
+            - Example changed from null to 'String obtida pelo user-agent/app utilizando a infraestrutura de consulta disponível em seu ambiente'
+POST /report-api/v2/hybrid-flow/server/authenticated
+- Description changed from 'Inclusão de relatório de autenticação na Platforma. Ao enviar um relatório, a Platforma vai fazer o processo de validação de maneira síncrona e devolver o resultado dessa validação na resposta. O status HTTP de retorno será 200 caso o reporte enviado seja aceito.
+' to 'Inclusão de report de autenticação na plataforma que deverá ser enviado após o client se autenticar / entrar no app e antes de autorizar o consentimento. Ao enviar um report, a Plataforma vai fazer o processo de validação de maneira síncrona e devolver o resultado dessa validação na resposta. O status HTTP de retorno será 200 caso o reporte enviado seja aceito.
+'
+- Request body changed
+  - Content changed
+    - Modified media type: application/json
+      - Schema changed
+        - Required changed
+          - New required property: serverOrgId
+        - Properties changed
+          - New property: serverOrgId
+          - Modified property: osVersion
+            - Example changed from null to 'String obtida pelo user-agent/app utilizando a infraestrutura de consulta disponível em seu ambiente'
+POST /report-api/v2/hybrid-flow/server/redirect-target
+- Description changed from 'Inclusão de relatório de redirecionamento para o destino na Platforma. Ao enviar um relatório, a Platforma vai fazer o processo de validação de maneira síncrona e devolver o resultado dessa validação na resposta. O status HTTP de retorno será 200 caso o reporte enviado seja aceito.
+' to 'Inclusão de report de chegada de usuário em sistema da transmissora/dentendora para autenticação. Deve ser enviado antes da autenticação do usuário. Ao enviar um report, a Plataforma vai fazer o processo de validação de maneira síncrona e devolver o resultado dessa validação na resposta. O status HTTP de retorno será 200 caso o reporte enviado seja aceito.
+'
+- Request body changed
+  - Content changed
+    - Modified media type: application/json
+      - Schema changed
+        - Required changed
+          - New required property: serverOrgId
+        - Properties changed
+          - New property: serverOrgId
+          - Modified property: osVersion
+            - Example changed from null to 'String obtida pelo user-agent/app utilizando a infraestrutura de consulta disponível em seu ambiente'
           - Modified property: type
             - New enum values: [map[AWAITING_HANDOFF:Deve ser utilizado quando é mostrado ao usuário a tela de HANDOFF.] map[AWAITING_USER_AUTH:Deve ser reportado quando o sistema aguarda autenticação do usuário.] map[AWAITING_REDIRECT_TO_APP:Deve ser reportado quando o sistema direciona o usuário direto para o APP.]]
             - Deleted enum values: [AWAITING_HANDOFF AWAITING_USER_AUTH AWAITING_REDIRECT_TO_APP]
 POST /report-api/v2/hybrid-flow/server/redirect-to-client
 - Description changed from 'Inclusão de relatório de redirecionamento para o cliente na Platforma. Ao enviar um relatório, a Platforma vai fazer o processo de validação de maneira síncrona e devolver o resultado dessa validação na resposta. O status HTTP de retorno será 200 caso o reporte enviado seja aceito.
-' to 'Inclusão de report de redirecionamento para o cliente na Plataforma. Ao enviar um report, a Plataforma vai fazer o processo de validação de maneira síncrona e devolver o resultado dessa validação na resposta. O status HTTP de retorno será 200 caso o reporte enviado seja aceito.
+' to 'Inclusão de report de redirecionamento do usuário de volta para receptora/iniciadora. Ao enviar um report, a Plataforma vai fazer o processo de validação de maneira síncrona e devolver o resultado dessa validação na resposta. O status HTTP de retorno será 200 caso o reporte enviado seja aceito.
 '
+- Request body changed
+  - Content changed
+    - Modified media type: application/json
+      - Schema changed
+        - Required changed
+          - New required property: serverOrgId
+        - Properties changed
+          - New property: serverOrgId
+          - Modified property: osVersion
+            - Example changed from null to 'String obtida pelo user-agent/app utilizando a infraestrutura de consulta disponível em seu ambiente'
