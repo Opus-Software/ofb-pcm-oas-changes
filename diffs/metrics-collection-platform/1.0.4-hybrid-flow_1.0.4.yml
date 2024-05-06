@@ -6,5 +6,102 @@ GET /report-api/v1/private/report/{reportId}
 PUT /report-api/v1/private/report/{reportId}  
 ### Deleted Endpoints: None
 ---------------------------
-### Modified Endpoints: None
-----------------------------
+### Modified Endpoints: 6
+-------------------------
+POST /report-api/v2/hybrid-flow/client/redirect-target-with-errors
+- Request body changed
+  - Content changed
+    - Modified media type: application/json
+      - Schema changed
+        - Required changed
+          - New required property: platform
+          - Deleted required property: Platform
+        - Properties changed
+          - New property: platform
+          - Deleted property: Platform
+          - Modified property: os
+            - New enum values: [LINUX MACOS UNIX WINDOWS IOS ANDROID OTHER]
+            - Deleted enum values: [linux macos unix windows ios android other]
+            - Example changed from 'linux' to 'LINUX'
+          - Modified property: osVersion
+            - Example changed from 'String obtida pelo user-agent/app utilizando a infraestrutura de consulta disponível em seu ambiente' to '20.04'
+POST /report-api/v2/hybrid-flow/client/redirect-target-without-errors
+- Request body changed
+  - Content changed
+    - Modified media type: application/json
+      - Schema changed
+        - Required changed
+          - New required property: platform
+          - Deleted required property: Platform
+        - Properties changed
+          - New property: platform
+          - Deleted property: Platform
+          - Modified property: os
+            - New enum values: [LINUX MACOS UNIX WINDOWS IOS ANDROID OTHER]
+            - Deleted enum values: [linux macos unix windows ios android other]
+            - Example changed from 'linux' to 'LINUX'
+          - Modified property: osVersion
+            - Example changed from 'String obtida pelo user-agent/app utilizando a infraestrutura de consulta disponível em seu ambiente' to '20.04'
+POST /report-api/v2/hybrid-flow/client/redirect-to-server
+- Request body changed
+  - Content changed
+    - Modified media type: application/json
+      - Schema changed
+        - Properties changed
+          - New property: platform
+          - Deleted property: Platform
+          - Modified property: os
+            - New enum values: [LINUX MACOS UNIX WINDOWS IOS ANDROID OTHER]
+            - Deleted enum values: [linux macos unix windows ios android other]
+            - Example changed from 'linux' to 'LINUX'
+          - Modified property: osVersion
+            - Example changed from 'String obtida pelo user-agent/app utilizando a infraestrutura de consulta disponível em seu ambiente' to '20.04'
+POST /report-api/v2/hybrid-flow/server/authenticated
+- Request body changed
+  - Content changed
+    - Modified media type: application/json
+      - Schema changed
+        - Required changed
+          - New required property: platform
+          - Deleted required property: Platform
+        - Properties changed
+          - New property: platform
+          - Deleted property: Platform
+          - Modified property: os
+            - New enum values: [LINUX MACOS UNIX WINDOWS IOS ANDROID OTHER]
+            - Deleted enum values: [linux macos unix windows ios android other]
+            - Example changed from 'linux' to 'LINUX'
+          - Modified property: osVersion
+            - Example changed from 'String obtida pelo user-agent/app utilizando a infraestrutura de consulta disponível em seu ambiente' to '20.04'
+POST /report-api/v2/hybrid-flow/server/redirect-target
+- Request body changed
+  - Content changed
+    - Modified media type: application/json
+      - Schema changed
+        - Properties changed
+          - Modified property: os
+            - New enum values: [LINUX MACOS UNIX WINDOWS IOS ANDROID OTHER]
+            - Deleted enum values: [linux macos unix windows ios android other]
+            - Example changed from 'linux' to 'LINUX'
+          - Modified property: osVersion
+            - Example changed from 'String obtida pelo user-agent/app utilizando a infraestrutura de consulta disponível em seu ambiente' to '20.04'
+          - Modified property: type
+            - New enum values: [AWAITING_HANDOFF AWAITING_USER_AUTH AWAITING_REDIRECT_TO_APP]
+            - Deleted enum values: [map[AWAITING_HANDOFF:Deve ser utilizado quando é mostrado ao usuário a tela de HANDOFF.] map[AWAITING_USER_AUTH:Deve ser reportado quando o sistema aguarda autenticação do usuário.] map[AWAITING_REDIRECT_TO_APP:Deve ser reportado quando o sistema direciona o usuário direto para o APP.]]
+POST /report-api/v2/hybrid-flow/server/redirect-to-client
+- Request body changed
+  - Content changed
+    - Modified media type: application/json
+      - Schema changed
+        - Required changed
+          - New required property: platform
+          - Deleted required property: Platform
+        - Properties changed
+          - New property: platform
+          - Deleted property: Platform
+          - Modified property: os
+            - New enum values: [LINUX MACOS UNIX WINDOWS IOS ANDROID OTHER]
+            - Deleted enum values: [linux macos unix windows ios android other]
+            - Example changed from 'linux' to 'LINUX'
+          - Modified property: osVersion
+            - Example changed from 'String obtida pelo user-agent/app utilizando a infraestrutura de consulta disponível em seu ambiente' to '20.04'
