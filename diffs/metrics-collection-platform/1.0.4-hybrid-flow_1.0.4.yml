@@ -88,6 +88,13 @@ POST /report-api/v2/hybrid-flow/server/redirect-target
           - Modified property: type
             - New enum values: [AWAITING_HANDOFF AWAITING_USER_AUTH AWAITING_REDIRECT_TO_APP]
             - Deleted enum values: [map[AWAITING_HANDOFF:Deve ser utilizado quando é mostrado ao usuário a tela de HANDOFF.] map[AWAITING_USER_AUTH:Deve ser reportado quando o sistema aguarda autenticação do usuário.] map[AWAITING_REDIRECT_TO_APP:Deve ser reportado quando o sistema direciona o usuário direto para o APP.]]
+- Responses changed
+  - Modified response: 200
+    - Description changed from 'O status 200 representa a situação onde  o registro enviado foi validado e será validado. Se o registro contiver problemas de validação.
+A operação vai devolver um objeto com resultado.
+' to 'O status 200 representa a situação onde o registro enviado foi validado e será validado. Se o registro contiver problemas de validação.
+A operação vai devolver um objeto com resultado.
+'
 POST /report-api/v2/hybrid-flow/server/redirect-to-client
 - Request body changed
   - Content changed
