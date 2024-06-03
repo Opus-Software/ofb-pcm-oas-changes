@@ -13,81 +13,117 @@ POST /report-api/v2/hybrid-flow/client/redirect-target-with-errors
   - Content changed
     - Modified media type: application/json
       - Schema changed
+        - Type changed from 'object' to 'array'
+        - Items changed
+          - Schema added
         - Required changed
-          - New required property: platform
           - Deleted required property: Platform
+          - Deleted required property: clientOrgId
+          - Deleted required property: consentId
+          - Deleted required property: error
+          - Deleted required property: os
+          - Deleted required property: osVersion
+          - Deleted required property: timestamp
         - Properties changed
-          - New property: platform
           - Deleted property: Platform
-          - Modified property: os
-            - New enum values: [LINUX MACOS UNIX WINDOWS IOS ANDROID OTHER]
-            - Deleted enum values: [linux macos unix windows ios android other]
-            - Example changed from 'linux' to 'LINUX'
-          - Modified property: osVersion
-            - Example changed from 'String obtida pelo user-agent/app utilizando a infraestrutura de consulta disponível em seu ambiente' to '20.04'
+          - Deleted property: clientOrgId
+          - Deleted property: consentId
+          - Deleted property: error
+          - Deleted property: os
+          - Deleted property: osVersion
+          - Deleted property: timestamp
 POST /report-api/v2/hybrid-flow/client/redirect-target-without-errors
 - Request body changed
   - Content changed
     - Modified media type: application/json
       - Schema changed
+        - Type changed from 'object' to 'array'
+        - Items changed
+          - Schema added
         - Required changed
-          - New required property: platform
           - Deleted required property: Platform
+          - Deleted required property: clientOrgId
+          - Deleted required property: consentId
+          - Deleted required property: os
+          - Deleted required property: osVersion
+          - Deleted required property: timestamp
         - Properties changed
-          - New property: platform
           - Deleted property: Platform
-          - Modified property: os
-            - New enum values: [LINUX MACOS UNIX WINDOWS IOS ANDROID OTHER]
-            - Deleted enum values: [linux macos unix windows ios android other]
-            - Example changed from 'linux' to 'LINUX'
-          - Modified property: osVersion
-            - Example changed from 'String obtida pelo user-agent/app utilizando a infraestrutura de consulta disponível em seu ambiente' to '20.04'
+          - Deleted property: clientOrgId
+          - Deleted property: consentId
+          - Deleted property: os
+          - Deleted property: osVersion
+          - Deleted property: timestamp
 POST /report-api/v2/hybrid-flow/client/redirect-to-server
 - Request body changed
   - Content changed
     - Modified media type: application/json
       - Schema changed
+        - Type changed from 'object' to 'array'
+        - Items changed
+          - Schema added
+        - Required changed
+          - Deleted required property: clientOrgId
+          - Deleted required property: consentId
+          - Deleted required property: os
+          - Deleted required property: osVersion
+          - Deleted required property: platform
+          - Deleted required property: timestamp
+          - Deleted required property: uriAuthorizationEndpoint
         - Properties changed
-          - New property: platform
           - Deleted property: Platform
-          - Modified property: os
-            - New enum values: [LINUX MACOS UNIX WINDOWS IOS ANDROID OTHER]
-            - Deleted enum values: [linux macos unix windows ios android other]
-            - Example changed from 'linux' to 'LINUX'
-          - Modified property: osVersion
-            - Example changed from 'String obtida pelo user-agent/app utilizando a infraestrutura de consulta disponível em seu ambiente' to '20.04'
+          - Deleted property: clientOrgId
+          - Deleted property: consentId
+          - Deleted property: os
+          - Deleted property: osVersion
+          - Deleted property: timestamp
+          - Deleted property: uriAuthorizationEndpoint
 POST /report-api/v2/hybrid-flow/server/authenticated
 - Request body changed
   - Content changed
     - Modified media type: application/json
       - Schema changed
+        - Type changed from 'object' to 'array'
+        - Items changed
+          - Schema added
         - Required changed
-          - New required property: platform
           - Deleted required property: Platform
+          - Deleted required property: consentId
+          - Deleted required property: os
+          - Deleted required property: osVersion
+          - Deleted required property: serverOrgId
+          - Deleted required property: timestamp
         - Properties changed
-          - New property: platform
           - Deleted property: Platform
-          - Modified property: os
-            - New enum values: [LINUX MACOS UNIX WINDOWS IOS ANDROID OTHER]
-            - Deleted enum values: [linux macos unix windows ios android other]
-            - Example changed from 'linux' to 'LINUX'
-          - Modified property: osVersion
-            - Example changed from 'String obtida pelo user-agent/app utilizando a infraestrutura de consulta disponível em seu ambiente' to '20.04'
+          - Deleted property: consentId
+          - Deleted property: os
+          - Deleted property: osVersion
+          - Deleted property: serverOrgId
+          - Deleted property: timestamp
 POST /report-api/v2/hybrid-flow/server/redirect-target
 - Request body changed
   - Content changed
     - Modified media type: application/json
       - Schema changed
+        - Type changed from 'object' to 'array'
+        - Items changed
+          - Schema added
+        - Required changed
+          - Deleted required property: consentId
+          - Deleted required property: os
+          - Deleted required property: osVersion
+          - Deleted required property: serverOrgId
+          - Deleted required property: timestamp
+          - Deleted required property: type
+          - Deleted required property: uriAuthorizationEndpoint
         - Properties changed
-          - Modified property: os
-            - New enum values: [LINUX MACOS UNIX WINDOWS IOS ANDROID OTHER]
-            - Deleted enum values: [linux macos unix windows ios android other]
-            - Example changed from 'linux' to 'LINUX'
-          - Modified property: osVersion
-            - Example changed from 'String obtida pelo user-agent/app utilizando a infraestrutura de consulta disponível em seu ambiente' to '20.04'
-          - Modified property: type
-            - New enum values: [AWAITING_HANDOFF AWAITING_USER_AUTH AWAITING_REDIRECT_TO_APP]
-            - Deleted enum values: [map[AWAITING_HANDOFF:Deve ser utilizado quando é mostrado ao usuário a tela de HANDOFF.] map[AWAITING_USER_AUTH:Deve ser reportado quando o sistema aguarda autenticação do usuário.] map[AWAITING_REDIRECT_TO_APP:Deve ser reportado quando o sistema direciona o usuário direto para o APP.]]
+          - Deleted property: consentId
+          - Deleted property: os
+          - Deleted property: osVersion
+          - Deleted property: serverOrgId
+          - Deleted property: timestamp
+          - Deleted property: type
+          - Deleted property: uriAuthorizationEndpoint
 - Responses changed
   - Modified response: 200
     - Description changed from 'O status 200 representa a situação onde  o registro enviado foi validado e será validado. Se o registro contiver problemas de validação.
@@ -100,15 +136,24 @@ POST /report-api/v2/hybrid-flow/server/redirect-to-client
   - Content changed
     - Modified media type: application/json
       - Schema changed
+        - Type changed from 'object' to 'array'
+        - Items changed
+          - Schema added
         - Required changed
-          - New required property: platform
           - Deleted required property: Platform
+          - Deleted required property: consentId
+          - Deleted required property: os
+          - Deleted required property: osVersion
+          - Deleted required property: serverOrgId
+          - Deleted required property: timestamp
+          - Deleted required property: type
+          - Deleted required property: uri_callback
         - Properties changed
-          - New property: platform
           - Deleted property: Platform
-          - Modified property: os
-            - New enum values: [LINUX MACOS UNIX WINDOWS IOS ANDROID OTHER]
-            - Deleted enum values: [linux macos unix windows ios android other]
-            - Example changed from 'linux' to 'LINUX'
-          - Modified property: osVersion
-            - Example changed from 'String obtida pelo user-agent/app utilizando a infraestrutura de consulta disponível em seu ambiente' to '20.04'
+          - Deleted property: consentId
+          - Deleted property: os
+          - Deleted property: osVersion
+          - Deleted property: serverOrgId
+          - Deleted property: timestamp
+          - Deleted property: type
+          - Deleted property: uri_callback
