@@ -32,6 +32,16 @@ POST /report-api/v2/hybrid-flow/client/redirect-target-with-errors
           - Deleted property: os
           - Deleted property: osVersion
           - Deleted property: timestamp
+- Responses changed
+  - Modified response: 200
+    - Content changed
+      - Modified media type: application/json
+        - Schema changed
+          - Type changed from 'object' to 'array'
+          - Items changed
+            - Schema added
+          - Properties changed
+            - Deleted property: reportId
 POST /report-api/v2/hybrid-flow/client/redirect-target-without-errors
 - Request body changed
   - Content changed
@@ -54,6 +64,16 @@ POST /report-api/v2/hybrid-flow/client/redirect-target-without-errors
           - Deleted property: os
           - Deleted property: osVersion
           - Deleted property: timestamp
+- Responses changed
+  - Modified response: 200
+    - Content changed
+      - Modified media type: application/json
+        - Schema changed
+          - Type changed from 'object' to 'array'
+          - Items changed
+            - Schema added
+          - Properties changed
+            - Deleted property: reportId
 POST /report-api/v2/hybrid-flow/client/redirect-to-server
 - Request body changed
   - Content changed
@@ -78,6 +98,16 @@ POST /report-api/v2/hybrid-flow/client/redirect-to-server
           - Deleted property: osVersion
           - Deleted property: timestamp
           - Deleted property: uriAuthorizationEndpoint
+- Responses changed
+  - Modified response: 200
+    - Content changed
+      - Modified media type: application/json
+        - Schema changed
+          - Type changed from 'object' to 'array'
+          - Items changed
+            - Schema added
+          - Properties changed
+            - Deleted property: reportId
 POST /report-api/v2/hybrid-flow/server/authenticated
 - Request body changed
   - Content changed
@@ -100,6 +130,16 @@ POST /report-api/v2/hybrid-flow/server/authenticated
           - Deleted property: osVersion
           - Deleted property: serverOrgId
           - Deleted property: timestamp
+- Responses changed
+  - Modified response: 200
+    - Content changed
+      - Modified media type: application/json
+        - Schema changed
+          - Type changed from 'object' to 'array'
+          - Items changed
+            - Schema added
+          - Properties changed
+            - Deleted property: reportId
 POST /report-api/v2/hybrid-flow/server/redirect-target
 - Request body changed
   - Content changed
@@ -131,6 +171,14 @@ A operação vai devolver um objeto com resultado.
 ' to 'O status 200 representa a situação onde o registro enviado foi validado e será validado. Se o registro contiver problemas de validação.
 A operação vai devolver um objeto com resultado.
 '
+    - Content changed
+      - Modified media type: application/json
+        - Schema changed
+          - Type changed from 'object' to 'array'
+          - Items changed
+            - Schema added
+          - Properties changed
+            - Deleted property: reportId
 POST /report-api/v2/hybrid-flow/server/redirect-to-client
 - Request body changed
   - Content changed
@@ -157,3 +205,13 @@ POST /report-api/v2/hybrid-flow/server/redirect-to-client
           - Deleted property: timestamp
           - Deleted property: type
           - Deleted property: uri_callback
+- Responses changed
+  - Modified response: 200
+    - Content changed
+      - Modified media type: application/json
+        - Schema changed
+          - Type changed from 'object' to 'array'
+          - Items changed
+            - Schema added
+          - Properties changed
+            - Deleted property: reportId
