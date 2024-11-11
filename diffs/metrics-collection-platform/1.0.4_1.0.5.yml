@@ -1,0 +1,44 @@
+﻿### New Endpoints: None
+-----------------------
+### Deleted Endpoints: None
+---------------------------
+### Modified Endpoints: 3
+-------------------------
+POST /report-api/v1/private/report
+- Request body changed
+  - Content changed
+    - Modified media type: application/json
+      - Schema changed
+        - Items changed
+          - Property 'OneOf' changed
+            - Schema #/components/schemas/ClientReportRequest modified
+              - Properties changed
+                - Modified property: additionalInfo
+                  - Properties changed
+                    - New property: cancelledFrom
+                    - New property: grantType
+GET /report-api/v1/private/report/{reportId}
+- Responses changed
+  - Modified response: 200
+    - Content changed
+      - Modified media type: application/json
+        - Schema changed
+          - Property 'AllOf' changed
+            - Schema #/components/schemas/ClientReportRequest modified
+              - Properties changed
+                - Modified property: additionalInfo
+                  - Properties changed
+                    - New property: cancelledFrom
+                    - New property: grantType
+PUT /report-api/v1/private/report/{reportId}
+- Request body changed
+  - Content changed
+    - Modified media type: application/json
+      - Schema changed
+        - Property 'OneOf' changed
+          - Schema #/components/schemas/ClientReportRequest modified
+            - Properties changed
+              - Modified property: additionalInfo
+                - Properties changed
+                  - New property: cancelledFrom
+                  - New property: grantType
