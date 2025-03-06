@@ -25,8 +25,18 @@ POST /report-api/v1/private/report
                 - Modified property: additionalInfo
                   - Description changed from 'Informações adicionais sobre o reporte deste endpoint/método. Possui característica variável. As regras de preenchimento estão na documentação funcional em [openfinancebrasil](https://openfinancebrasil.atlassian.net/wiki/spaces/OF/pages/37879861/Reporte#additionalInfo). Atenção especial na tabela Excel com a listagem de endpoints em [https://openfinancebrasil.atlassian.net/wiki/download/attachments/37879861/Tabela%20additionalInfo%20%E2%80%93%20campos%20contexto%20e%20obrigatoriedade_v17-.xlsx?api=v2](https://openfinancebrasil.atlassian.net/wiki/download/attachments/37879861/Tabela%20additionalInfo%20%E2%80%93%20campos%20contexto%20e%20obrigatoriedade_v17-.xlsx?api=v2)' to 'Informações adicionais sobre o reporte deste endpoint/método. Possui característica variável. As regras de preenchimento estão na documentação funcional em [openfinancebrasil](https://openfinancebrasil.atlassian.net/wiki/spaces/OF/pages/806158355/Planilha+AdditionalInfo). Atenção especial na tabela Excel com a listagem de endpoints em [https://openfinancebrasil.atlassian.net/wiki/spaces/OF/pages/806158355/Planilha+AdditionalInfo](https://openfinancebrasil.atlassian.net/wiki/spaces/OF/pages/806158355/Planilha+AdditionalInfo)'
                   - Properties changed
+                    - New property: automaticSweeping
+                    - New property: cancellationReason
                     - New property: cancelledFrom
+                    - New property: firstPayment
+                    - New property: fixedAmount
                     - New property: grantType
+                    - New property: interval
+                    - New property: isRetryAccepted
+                    - New property: minimumVariableAmount
+                    - New property: originalRecurringPaymentId
+                    - New property: paymentReference
+                    - New property: recurringPaymentId
             - Schema #/components/schemas/ServerReportRequest modified
               - Properties changed
                 - Modified property: additionalInfo
@@ -43,8 +53,18 @@ GET /report-api/v1/private/report/{reportId}
                 - Modified property: additionalInfo
                   - Description changed from 'Informações adicionais sobre o reporte deste endpoint/método. Possui característica variável. As regras de preenchimento estão na documentação funcional em [openfinancebrasil](https://openfinancebrasil.atlassian.net/wiki/spaces/OF/pages/37879861/Reporte#additionalInfo). Atenção especial na tabela Excel com a listagem de endpoints em [https://openfinancebrasil.atlassian.net/wiki/download/attachments/37879861/Tabela%20additionalInfo%20%E2%80%93%20campos%20contexto%20e%20obrigatoriedade_v17-.xlsx?api=v2](https://openfinancebrasil.atlassian.net/wiki/download/attachments/37879861/Tabela%20additionalInfo%20%E2%80%93%20campos%20contexto%20e%20obrigatoriedade_v17-.xlsx?api=v2)' to 'Informações adicionais sobre o reporte deste endpoint/método. Possui característica variável. As regras de preenchimento estão na documentação funcional em [openfinancebrasil](https://openfinancebrasil.atlassian.net/wiki/spaces/OF/pages/806158355/Planilha+AdditionalInfo). Atenção especial na tabela Excel com a listagem de endpoints em [https://openfinancebrasil.atlassian.net/wiki/spaces/OF/pages/806158355/Planilha+AdditionalInfo](https://openfinancebrasil.atlassian.net/wiki/spaces/OF/pages/806158355/Planilha+AdditionalInfo)'
                   - Properties changed
+                    - New property: automaticSweeping
+                    - New property: cancellationReason
                     - New property: cancelledFrom
+                    - New property: firstPayment
+                    - New property: fixedAmount
                     - New property: grantType
+                    - New property: interval
+                    - New property: isRetryAccepted
+                    - New property: minimumVariableAmount
+                    - New property: originalRecurringPaymentId
+                    - New property: paymentReference
+                    - New property: recurringPaymentId
 PUT /report-api/v1/private/report/{reportId}
 - Request body changed
   - Content changed
@@ -56,8 +76,18 @@ PUT /report-api/v1/private/report/{reportId}
               - Modified property: additionalInfo
                 - Description changed from 'Informações adicionais sobre o reporte deste endpoint/método. Possui característica variável. As regras de preenchimento estão na documentação funcional em [openfinancebrasil](https://openfinancebrasil.atlassian.net/wiki/spaces/OF/pages/37879861/Reporte#additionalInfo). Atenção especial na tabela Excel com a listagem de endpoints em [https://openfinancebrasil.atlassian.net/wiki/download/attachments/37879861/Tabela%20additionalInfo%20%E2%80%93%20campos%20contexto%20e%20obrigatoriedade_v17-.xlsx?api=v2](https://openfinancebrasil.atlassian.net/wiki/download/attachments/37879861/Tabela%20additionalInfo%20%E2%80%93%20campos%20contexto%20e%20obrigatoriedade_v17-.xlsx?api=v2)' to 'Informações adicionais sobre o reporte deste endpoint/método. Possui característica variável. As regras de preenchimento estão na documentação funcional em [openfinancebrasil](https://openfinancebrasil.atlassian.net/wiki/spaces/OF/pages/806158355/Planilha+AdditionalInfo). Atenção especial na tabela Excel com a listagem de endpoints em [https://openfinancebrasil.atlassian.net/wiki/spaces/OF/pages/806158355/Planilha+AdditionalInfo](https://openfinancebrasil.atlassian.net/wiki/spaces/OF/pages/806158355/Planilha+AdditionalInfo)'
                 - Properties changed
+                  - New property: automaticSweeping
+                  - New property: cancellationReason
                   - New property: cancelledFrom
+                  - New property: firstPayment
+                  - New property: fixedAmount
                   - New property: grantType
+                  - New property: interval
+                  - New property: isRetryAccepted
+                  - New property: minimumVariableAmount
+                  - New property: originalRecurringPaymentId
+                  - New property: paymentReference
+                  - New property: recurringPaymentId
           - Schema #/components/schemas/ServerReportRequest modified
             - Properties changed
               - Modified property: additionalInfo
