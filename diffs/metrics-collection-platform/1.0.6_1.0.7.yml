@@ -3,5 +3,41 @@
 POST /report-api/v1/consents/stock  
 ### Deleted Endpoints: None
 ---------------------------
-### Modified Endpoints: None
-----------------------------
+### Modified Endpoints: 2
+-------------------------
+POST /report-api/v1/opendata/report
+- Responses changed
+  - Modified response: 200
+    - Content changed
+      - Modified media type: application/json
+        - Schema changed
+          - Items changed
+            - Properties changed
+              - Modified property: correlationId
+                - Example changed from 'uGQHwNupARo7I9E2PLJZph18a0M9y7DcUe7ITt3DqUOJd9NVjnskxf2' to 'xxuGQHwNupARo7I9E2PLJZph18a0M9y7DcUe7ITt3DqUOJd9NVjnskxf2'
+  - Modified response: 207
+    - Content changed
+      - Modified media type: application/json
+        - Schema changed
+          - Items changed
+            - Properties changed
+              - Modified property: correlationId
+                - Example changed from 'uGQHwNupARo7I9E2PLJZph18a0M9y7DcUe7ITt3DqUOJd9NVjnskxf2' to 'xxuGQHwNupARo7I9E2PLJZph18a0M9y7DcUe7ITt3DqUOJd9NVjnskxf2'
+POST /report-api/v1/private/report
+- Responses changed
+  - Modified response: 200
+    - Content changed
+      - Modified media type: application/json
+        - Schema changed
+          - Items changed
+            - Properties changed
+              - Modified property: correlationId
+                - Example changed from 'uGQHwNupARo7I9E2PLJZph18a0M9y7DcUe7ITt3DqUOJd9NVjnskxf2' to 'xxuGQHwNupARo7I9E2PLJZph18a0M9y7DcUe7ITt3DqUOJd9NVjnskxf2'
+  - Modified response: 207
+    - Content changed
+      - Modified media type: application/json
+        - Schema changed
+          - Items changed
+            - Properties changed
+              - Modified property: correlationId
+                - Example changed from 'uGQHwNupARo7I9E2PLJZph18a0M9y7DcUe7ITt3DqUOJd9NVjnskxf2' to 'xxuGQHwNupARo7I9E2PLJZph18a0M9y7DcUe7ITt3DqUOJd9NVjnskxf2'
