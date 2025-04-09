@@ -1,1 +1,23 @@
-﻿No changes
+﻿### New Endpoints: None
+-----------------------
+### Deleted Endpoints: None
+---------------------------
+### Modified Endpoints: 1
+-------------------------
+POST /report-api/v1/consents/stock
+- Request body changed
+  - Content changed
+    - Modified media type: application/json
+      - Schema changed
+        - Properties changed
+          - Modified property: consentmentsStockList
+            - Items changed
+              - Properties changed
+                - Modified property: totalActiveConsentiments
+                  - Description changed from 'Estoque total de consentimentos ativos, correspondendo ao número de consentimentos totais válidos até a data de referência.' to 'Estoque total de consetimentos ativos'
+          - Modified property: orgId
+            - Description changed from 'Organização de envio da mensagem referente ao papel do Transmissor ou Receptor, conforme Role, a ser preenchido a partir do Certificado. A ser enviado vazio caso o reporte seja da mesma instituição que obteve o token para uso da PCM e, caso contrário, deve ser preenchido com o organisationId da instituição filha para o qual a instituição mãe está fazendo o reporte.' to 'A ser enviado vazio caso o report seja da mesma instituição que obteve o token para uso da PCM e, caso contrário, deve ser preenchido com o organasationId da instituição filha para o qual a instituição mãe está fazendo o report.'
+          - Modified property: role
+            - Description changed from 'ENUM indicando se o reporte que está sendo enviado apresenta a visão do SERVER ou do CLIENT.' to 'ENUM indicando se o reporte que está sendo enviado apresenta a visão do server ou do client. Obrigatório valor "SERVER"'
+          - Modified property: timestamp
+            - Description changed from 'Data/Hora UTC no formato ISO8601 com milissegundos (YYYY-MM-DDTHH:mm:ss.sssZ) do momento em que a chamada foi disparada, imediatamente antes do primeiro byte enviado na requisição. Deve conter a data a que se referem os dados de consentimento enviados na mensagem.' to 'Data/Hora UTC no formato ISO8601 com milissegundos (YYYY-MM-DDTHH:mm:ss.sssZ) do momento em que a chamada foi disparada, imediatamente antes do primeiro byte enviado na requisição.'
