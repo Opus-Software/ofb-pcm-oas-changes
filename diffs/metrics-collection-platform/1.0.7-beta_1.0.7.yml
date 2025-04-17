@@ -9,10 +9,21 @@ POST /report-api/v1/consents/stock
   - Content changed
     - Modified media type: application/json
       - Schema changed
+        - Required changed
+          - New required property: consentmentsStockList
         - Properties changed
           - Modified property: consentmentsStockList
+            - MinItems changed from 1 to 0
             - Items changed
+              - Required changed
+                - New required property: clientOrgId
+                - New required property: serverOrgId
+                - New required property: totalActiveConsentiments
               - Properties changed
+                - Modified property: clientOrgId
+                  - Description changed from 'Identificador da organização de onde a chamada foi disparada.' to 'A ser enviado vazio caso o report seja da mesma instituição que obteve o token para uso da PCM e, caso contrário, deve ser preenchido com o organasationId da instituição filha para o qual a instituição mãe está fazendo o report.'
+                - Modified property: serverOrgId
+                  - Description changed from 'Identificador da organização para onde a chamada foi feita.' to 'A ser enviado vazio caso o report seja da mesma instituição que obteve o token para uso da PCM e, caso contrário, deve ser preenchido com o organasationId da instituição filha para o qual a instituição mãe está fazendo o report.'
                 - Modified property: totalActiveConsentiments
                   - Description changed from 'Estoque total de consentimentos ativos, correspondendo ao número de consentimentos totais válidos até a data de referência.' to 'Estoque total de consetimentos ativos'
           - Modified property: orgId
