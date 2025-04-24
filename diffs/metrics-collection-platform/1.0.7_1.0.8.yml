@@ -1,0 +1,251 @@
+﻿### New Endpoints: None
+-----------------------
+### Deleted Endpoints: None
+---------------------------
+### Modified Endpoints: 5
+-------------------------
+POST /report-api/v1/consents/stock
+- Description changed from 'API dedicada à obtenção de estoque de consentimentos, a partir do autorreporte das instituições, com endpoint único para os papeis Client/Server. Registra a quantidade total de estoque de consentimentos ativos até a data de referência, assegurando que a quantidade de consentimentos únicos para PF/PJ não exceda a quantidade de consentimentos ativos. Deve-se garantir o envio os dados relativos a uma data de referência até 08h00 do dia seguinte. 
+' to 'API dedicada à obtenção de estoque de consentimentos, a partir do autorreporte das instituições, com endpoint único para os papeis Client/Server. Registra a quantidade total de estoque de consentimentos ativos até a data de referência, assegurando que a quantidade de consentimentos únicos para PF/PJ não exceda a quantidade de consentimentos ativos. Deve-se garantir o envio diários dos dados relativos a uma data de referência até 08h00 do dia seguinte. 
+'
+POST /report-api/v1/opendata/report
+- Request body changed
+  - Content changed
+    - Modified media type: application/json
+      - Schema changed
+        - Items changed
+          - Properties changed
+            - Modified property: additionalInfo
+              - Properties changed
+                - Modified property: amountType
+                  - New enum values: [FIXO VARIAVEL]
+                - Modified property: isFirstPayment
+                  - Type changed from 'string' to 'boolean'
+                  - New enum values: [true false]
+                - Modified property: paymentType
+                  - Description changed from 'Identifica o modo de pagamento acionado no consentimento
+1. Envio obrigatório para a role Client​ 
+2. Conteudo ENUM do novo campo varia de acordo com o endpoint conforme tabela abaixo
+| Endpoint | Valores possíveis |
+|----------|-------------|
+| <br>POST /open-banking/payments/v4/consents&nbsp;&nbsp;&nbsp;    |  <br>IMMEDIATE<br>SCHEDULED<br>RECURRENT
+|----------|-------------|
+| <br>POST /open-banking/payments/v4/pix/payments&nbsp;&nbsp;&nbsp;    |  <br>IMMEDIATE<br>SCHEDULED<br>RECURRENT
+|----------|-------------|
+| <br>PATCH /open-banking/payments/v4/pix/payments/{paymentId}​&nbsp;&nbsp;&nbsp;    |  <br>IMMEDIATE<br>SCHEDULED<br>RECURRENT
+|----------|-------------|
+| <br>POST /automatic-payments/v1/recurring-consents&nbsp;&nbsp;&nbsp;    |  <br>SWEEPING
+|----------|-------------|
+| <br>PATCH /automatic-payments/v1/recurring-consents/{consentId}&nbsp;&nbsp;&nbsp;    |  <br>SWEEPING
+|----------|-------------|
+| <br>POST /automatic-payments/v1/pix/recurring-payments&nbsp;&nbsp;&nbsp;    |  <br>SWEEPING
+|----------|-------------|
+| <br>PATCH /automatic-payments/v1/pix/recurring-payments/{paymentId}&nbsp;&nbsp;&nbsp;   |  <br>SWEEPING
+<br>
+' to 'Identifica o modo de pagamento acionado no consentimento
+1. Envio obrigatório para a role Client​ 
+2. Conteudo ENUM do novo campo varia de acordo com o endpoint conforme tabela abaixo
+| Endpoint | Valores possíveis |
+|----------|-------------|
+| <br>POST /open-banking/payments/v4/consents&nbsp;&nbsp;&nbsp;    |  <br>IMMEDIATE<br>SCHEDULED<br>RECURRENT
+|----------|-------------|
+| <br>POST /open-banking/payments/v4/pix/payments&nbsp;&nbsp;&nbsp;    |  <br>IMMEDIATE<br>SCHEDULED<br>RECURRENT<br>AUTOMATIC
+|----------|-------------|
+| <br>PATCH /open-banking/payments/v4/pix/payments/{paymentId}​&nbsp;&nbsp;&nbsp;    |  <br>IMMEDIATE<br>SCHEDULED<br>RECURRENT<br>AUTOMATIC
+|----------|-------------|
+| <br>POST /automatic-payments/v1/recurring-consents&nbsp;&nbsp;&nbsp;    |  <br>SWEEPING
+|----------|-------------|
+| <br>PATCH /automatic-payments/v1/recurring-consents/{consentId}&nbsp;&nbsp;&nbsp;    |  <br>SWEEPING
+|----------|-------------|
+| <br>POST /automatic-payments/v1/pix/recurring-payments&nbsp;&nbsp;&nbsp;    |  <br>SWEEPING<br>AUTOMATIC
+|----------|-------------|
+| <br>PATCH /automatic-payments/v1/pix/recurring-payments/{paymentId}&nbsp;&nbsp;&nbsp;   |  <br>SWEEPING<br>AUTOMATIC
+<br>
+'
+POST /report-api/v1/private/report
+- Request body changed
+  - Content changed
+    - Modified media type: application/json
+      - Schema changed
+        - Items changed
+          - Property 'OneOf' changed
+            - Schema #/components/schemas/ClientReportRequest modified
+              - Properties changed
+                - Modified property: additionalInfo
+                  - Properties changed
+                    - Modified property: amountType
+                      - New enum values: [FIXO VARIAVEL]
+                    - Modified property: isFirstPayment
+                      - Type changed from 'string' to 'boolean'
+                      - New enum values: [true false]
+                    - Modified property: paymentType
+                      - Description changed from 'Identifica o modo de pagamento acionado no consentimento
+1. Envio obrigatório para a role Client​
+2. Conteudo ENUM do novo campo varia de acordo com o endpoint conforme tabela abaixo
+| Endpoint | Valores possíveis |
+|----------|-------------|
+| <br>POST /open-banking/payments/v4/consents&nbsp;&nbsp;&nbsp;    |  <br>IMMEDIATE<br>SCHEDULED<br>RECURRENT
+|----------|-------------|
+| <br>POST /open-banking/payments/v4/pix/payments&nbsp;&nbsp;&nbsp;    |  <br>IMMEDIATE<br>SCHEDULED<br>RECURRENT
+|----------|-------------|
+| <br>PATCH /open-banking/payments/v4/pix/payments/{paymentId}​&nbsp;&nbsp;&nbsp;    |  <br>IMMEDIATE<br>SCHEDULED<br>RECURRENT
+|----------|-------------|
+| <br>POST /automatic-payments/v1/recurring-consents&nbsp;&nbsp;&nbsp;    |  <br>SWEEPING
+|----------|-------------|
+| <br>PATCH /automatic-payments/v1/recurring-consents/{consentId}&nbsp;&nbsp;&nbsp;    |  <br>SWEEPING
+|----------|-------------|
+| <br>POST /automatic-payments/v1/pix/recurring-payments&nbsp;&nbsp;&nbsp;    |  <br>SWEEPING
+|----------|-------------|
+| <br>PATCH /automatic-payments/v1/pix/recurring-payments/{paymentId}&nbsp;&nbsp;&nbsp;   |  <br>SWEEPING
+<br>
+' to 'Identifica o modo de pagamento acionado no consentimento
+1. Envio obrigatório para a role Client​
+2. Conteudo ENUM do novo campo varia de acordo com o endpoint conforme tabela abaixo
+| Endpoint | Valores possíveis |
+|----------|-------------|
+| <br>POST /open-banking/payments/v4/consents&nbsp;&nbsp;&nbsp;    |  <br>IMMEDIATE<br>SCHEDULED<br>RECURRENT
+|----------|-------------|
+| <br>POST /open-banking/payments/v4/pix/payments&nbsp;&nbsp;&nbsp;    |  <br>IMMEDIATE<br>SCHEDULED<br>RECURRENT<br>AUTOMATIC
+|----------|-------------|
+| <br>PATCH /open-banking/payments/v4/pix/payments/{paymentId}​&nbsp;&nbsp;&nbsp;    |  <br>IMMEDIATE<br>SCHEDULED<br>RECURRENT<br>AUTOMATIC
+|----------|-------------|
+| <br>POST /automatic-payments/v1/recurring-consents&nbsp;&nbsp;&nbsp;    |  <br>SWEEPING
+|----------|-------------|
+| <br>PATCH /automatic-payments/v1/recurring-consents/{consentId}&nbsp;&nbsp;&nbsp;    |  <br>SWEEPING
+|----------|-------------|
+| <br>POST /automatic-payments/v1/pix/recurring-payments&nbsp;&nbsp;&nbsp;    |  <br>SWEEPING<br>AUTOMATIC
+|----------|-------------|
+| <br>PATCH /automatic-payments/v1/pix/recurring-payments/{paymentId}&nbsp;&nbsp;&nbsp;   |  <br>SWEEPING<br>AUTOMATIC
+<br>
+'
+                    - Modified property: personType
+                      - New enum values: [PF PJ]
+                - Modified property: endpoint
+                  - New enum values: [/open-banking/automatic-payments/v2/recurring-consents /open-banking/automatic-payments/v2/recurring-consents/{recurringConsentId} /open-banking/automatic-payments/v2/pix/recurring-payments /open-banking/automatic-payments/v2/pix/recurring-payments/{recurringPaymentId}]
+            - Schema #/components/schemas/ServerReportRequest modified
+              - Properties changed
+                - Modified property: endpoint
+                  - New enum values: [/open-banking/automatic-payments/v2/recurring-consents /open-banking/automatic-payments/v2/recurring-consents/{recurringConsentId} /open-banking/automatic-payments/v2/pix/recurring-payments /open-banking/automatic-payments/v2/pix/recurring-payments/{recurringPaymentId}]
+GET /report-api/v1/private/report/{reportId}
+- Responses changed
+  - Modified response: 200
+    - Content changed
+      - Modified media type: application/json
+        - Schema changed
+          - Property 'AllOf' changed
+            - Schema #/components/schemas/ClientReportRequest modified
+              - Properties changed
+                - Modified property: additionalInfo
+                  - Properties changed
+                    - Modified property: amountType
+                      - New enum values: [FIXO VARIAVEL]
+                    - Modified property: isFirstPayment
+                      - Type changed from 'string' to 'boolean'
+                      - New enum values: [true false]
+                    - Modified property: paymentType
+                      - Description changed from 'Identifica o modo de pagamento acionado no consentimento
+1. Envio obrigatório para a role Client​
+2. Conteudo ENUM do novo campo varia de acordo com o endpoint conforme tabela abaixo
+| Endpoint | Valores possíveis |
+|----------|-------------|
+| <br>POST /open-banking/payments/v4/consents&nbsp;&nbsp;&nbsp;    |  <br>IMMEDIATE<br>SCHEDULED<br>RECURRENT
+|----------|-------------|
+| <br>POST /open-banking/payments/v4/pix/payments&nbsp;&nbsp;&nbsp;    |  <br>IMMEDIATE<br>SCHEDULED<br>RECURRENT
+|----------|-------------|
+| <br>PATCH /open-banking/payments/v4/pix/payments/{paymentId}​&nbsp;&nbsp;&nbsp;    |  <br>IMMEDIATE<br>SCHEDULED<br>RECURRENT
+|----------|-------------|
+| <br>POST /automatic-payments/v1/recurring-consents&nbsp;&nbsp;&nbsp;    |  <br>SWEEPING
+|----------|-------------|
+| <br>PATCH /automatic-payments/v1/recurring-consents/{consentId}&nbsp;&nbsp;&nbsp;    |  <br>SWEEPING
+|----------|-------------|
+| <br>POST /automatic-payments/v1/pix/recurring-payments&nbsp;&nbsp;&nbsp;    |  <br>SWEEPING
+|----------|-------------|
+| <br>PATCH /automatic-payments/v1/pix/recurring-payments/{paymentId}&nbsp;&nbsp;&nbsp;   |  <br>SWEEPING
+<br>
+' to 'Identifica o modo de pagamento acionado no consentimento
+1. Envio obrigatório para a role Client​
+2. Conteudo ENUM do novo campo varia de acordo com o endpoint conforme tabela abaixo
+| Endpoint | Valores possíveis |
+|----------|-------------|
+| <br>POST /open-banking/payments/v4/consents&nbsp;&nbsp;&nbsp;    |  <br>IMMEDIATE<br>SCHEDULED<br>RECURRENT
+|----------|-------------|
+| <br>POST /open-banking/payments/v4/pix/payments&nbsp;&nbsp;&nbsp;    |  <br>IMMEDIATE<br>SCHEDULED<br>RECURRENT<br>AUTOMATIC
+|----------|-------------|
+| <br>PATCH /open-banking/payments/v4/pix/payments/{paymentId}​&nbsp;&nbsp;&nbsp;    |  <br>IMMEDIATE<br>SCHEDULED<br>RECURRENT<br>AUTOMATIC
+|----------|-------------|
+| <br>POST /automatic-payments/v1/recurring-consents&nbsp;&nbsp;&nbsp;    |  <br>SWEEPING
+|----------|-------------|
+| <br>PATCH /automatic-payments/v1/recurring-consents/{consentId}&nbsp;&nbsp;&nbsp;    |  <br>SWEEPING
+|----------|-------------|
+| <br>POST /automatic-payments/v1/pix/recurring-payments&nbsp;&nbsp;&nbsp;    |  <br>SWEEPING<br>AUTOMATIC
+|----------|-------------|
+| <br>PATCH /automatic-payments/v1/pix/recurring-payments/{paymentId}&nbsp;&nbsp;&nbsp;   |  <br>SWEEPING<br>AUTOMATIC
+<br>
+'
+                    - Modified property: personType
+                      - New enum values: [PF PJ]
+                - Modified property: endpoint
+                  - New enum values: [/open-banking/automatic-payments/v2/recurring-consents /open-banking/automatic-payments/v2/recurring-consents/{recurringConsentId} /open-banking/automatic-payments/v2/pix/recurring-payments /open-banking/automatic-payments/v2/pix/recurring-payments/{recurringPaymentId}]
+PUT /report-api/v1/private/report/{reportId}
+- Request body changed
+  - Content changed
+    - Modified media type: application/json
+      - Schema changed
+        - Property 'OneOf' changed
+          - Schema #/components/schemas/ClientReportRequest modified
+            - Properties changed
+              - Modified property: additionalInfo
+                - Properties changed
+                  - Modified property: amountType
+                    - New enum values: [FIXO VARIAVEL]
+                  - Modified property: isFirstPayment
+                    - Type changed from 'string' to 'boolean'
+                    - New enum values: [true false]
+                  - Modified property: paymentType
+                    - Description changed from 'Identifica o modo de pagamento acionado no consentimento
+1. Envio obrigatório para a role Client​
+2. Conteudo ENUM do novo campo varia de acordo com o endpoint conforme tabela abaixo
+| Endpoint | Valores possíveis |
+|----------|-------------|
+| <br>POST /open-banking/payments/v4/consents&nbsp;&nbsp;&nbsp;    |  <br>IMMEDIATE<br>SCHEDULED<br>RECURRENT
+|----------|-------------|
+| <br>POST /open-banking/payments/v4/pix/payments&nbsp;&nbsp;&nbsp;    |  <br>IMMEDIATE<br>SCHEDULED<br>RECURRENT
+|----------|-------------|
+| <br>PATCH /open-banking/payments/v4/pix/payments/{paymentId}​&nbsp;&nbsp;&nbsp;    |  <br>IMMEDIATE<br>SCHEDULED<br>RECURRENT
+|----------|-------------|
+| <br>POST /automatic-payments/v1/recurring-consents&nbsp;&nbsp;&nbsp;    |  <br>SWEEPING
+|----------|-------------|
+| <br>PATCH /automatic-payments/v1/recurring-consents/{consentId}&nbsp;&nbsp;&nbsp;    |  <br>SWEEPING
+|----------|-------------|
+| <br>POST /automatic-payments/v1/pix/recurring-payments&nbsp;&nbsp;&nbsp;    |  <br>SWEEPING
+|----------|-------------|
+| <br>PATCH /automatic-payments/v1/pix/recurring-payments/{paymentId}&nbsp;&nbsp;&nbsp;   |  <br>SWEEPING
+<br>
+' to 'Identifica o modo de pagamento acionado no consentimento
+1. Envio obrigatório para a role Client​
+2. Conteudo ENUM do novo campo varia de acordo com o endpoint conforme tabela abaixo
+| Endpoint | Valores possíveis |
+|----------|-------------|
+| <br>POST /open-banking/payments/v4/consents&nbsp;&nbsp;&nbsp;    |  <br>IMMEDIATE<br>SCHEDULED<br>RECURRENT
+|----------|-------------|
+| <br>POST /open-banking/payments/v4/pix/payments&nbsp;&nbsp;&nbsp;    |  <br>IMMEDIATE<br>SCHEDULED<br>RECURRENT<br>AUTOMATIC
+|----------|-------------|
+| <br>PATCH /open-banking/payments/v4/pix/payments/{paymentId}​&nbsp;&nbsp;&nbsp;    |  <br>IMMEDIATE<br>SCHEDULED<br>RECURRENT<br>AUTOMATIC
+|----------|-------------|
+| <br>POST /automatic-payments/v1/recurring-consents&nbsp;&nbsp;&nbsp;    |  <br>SWEEPING
+|----------|-------------|
+| <br>PATCH /automatic-payments/v1/recurring-consents/{consentId}&nbsp;&nbsp;&nbsp;    |  <br>SWEEPING
+|----------|-------------|
+| <br>POST /automatic-payments/v1/pix/recurring-payments&nbsp;&nbsp;&nbsp;    |  <br>SWEEPING<br>AUTOMATIC
+|----------|-------------|
+| <br>PATCH /automatic-payments/v1/pix/recurring-payments/{paymentId}&nbsp;&nbsp;&nbsp;   |  <br>SWEEPING<br>AUTOMATIC
+<br>
+'
+                  - Modified property: personType
+                    - New enum values: [PF PJ]
+              - Modified property: endpoint
+                - New enum values: [/open-banking/automatic-payments/v2/recurring-consents /open-banking/automatic-payments/v2/recurring-consents/{recurringConsentId} /open-banking/automatic-payments/v2/pix/recurring-payments /open-banking/automatic-payments/v2/pix/recurring-payments/{recurringPaymentId}]
+          - Schema #/components/schemas/ServerReportRequest modified
+            - Properties changed
+              - Modified property: endpoint
+                - New enum values: [/open-banking/automatic-payments/v2/recurring-consents /open-banking/automatic-payments/v2/recurring-consents/{recurringConsentId} /open-banking/automatic-payments/v2/pix/recurring-payments /open-banking/automatic-payments/v2/pix/recurring-payments/{recurringPaymentId}]
