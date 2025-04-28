@@ -2,7 +2,7 @@
 -----------------------
 ### Deleted Endpoints: None
 ---------------------------
-### Modified Endpoints: 3
+### Modified Endpoints: 6
 -------------------------
 POST /report-api/v1/private/report
 - Request body changed
@@ -1149,3 +1149,30 @@ PUT /report-api/v1/private/report/{reportId}
 | <br>PATCH /open-banking/automatic-payments/v2/pix/recurring-payments/{recurringPaymentId}&nbsp;&nbsp;&nbsp;   |  <br>SWEEPING<br>AUTOMATIC
 <br>
 '
+POST /report-api/v2/hybrid-flow/client/redirect-to-server
+- Request body changed
+  - Content changed
+    - Modified media type: application/json
+      - Schema changed
+        - Items changed
+          - Properties changed
+            - Modified property: uriAuthorizationEndpoint
+              - Pattern changed from '^(https:\/\/)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&\/\/=]*)$' to '^[- /:_.',0-9a-zA-Z]{0,200}$'
+POST /report-api/v2/hybrid-flow/server/redirect-target
+- Request body changed
+  - Content changed
+    - Modified media type: application/json
+      - Schema changed
+        - Items changed
+          - Properties changed
+            - Modified property: uriAuthorizationEndpoint
+              - Pattern changed from '^(https:\/\/)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&\/\/=]*)$' to '^[- /:_.',0-9a-zA-Z]{0,200}$'
+POST /report-api/v2/hybrid-flow/server/redirect-to-client
+- Request body changed
+  - Content changed
+    - Modified media type: application/json
+      - Schema changed
+        - Items changed
+          - Properties changed
+            - Modified property: uri_callback
+              - Pattern changed from '^(https:\/\/)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&\/\/=]*)$' to '^[- /:_.',0-9a-zA-Z]{0,200}$'
