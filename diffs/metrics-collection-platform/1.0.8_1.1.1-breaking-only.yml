@@ -2,32 +2,58 @@
 -----------------------
 ### Deleted Endpoints: None
 ---------------------------
-### Modified Endpoints: 3
+### Modified Endpoints: 4
 -------------------------
-POST /report-api/v2/hybrid-flow/client/redirect-to-server
+POST /report-api/v1/opendata/report
 - Request body changed
   - Content changed
     - Modified media type: application/json
       - Schema changed
         - Items changed
           - Properties changed
-            - Modified property: uriAuthorizationEndpoint
-              - Pattern changed from '^(https:\/\/)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&\/\/=]*)$' to '^[- /:_.',0-9a-zA-Z]{0,200}$'
-POST /report-api/v2/hybrid-flow/server/redirect-target
+            - Modified property: additionalInfo
+              - Properties changed
+                - Modified property: isFirstPayment
+                  - Type changed from 'boolean' to 'string'
+                  - Deleted enum values: [true false]
+POST /report-api/v1/private/report
 - Request body changed
   - Content changed
     - Modified media type: application/json
       - Schema changed
         - Items changed
-          - Properties changed
-            - Modified property: uriAuthorizationEndpoint
-              - Pattern changed from '^(https:\/\/)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&\/\/=]*)$' to '^[- /:_.',0-9a-zA-Z]{0,200}$'
-POST /report-api/v2/hybrid-flow/server/redirect-to-client
+          - Property 'OneOf' changed
+            - Schema #/components/schemas/ClientReportRequest modified
+              - Properties changed
+                - Modified property: additionalInfo
+                  - Properties changed
+                    - Modified property: isFirstPayment
+                      - Type changed from 'boolean' to 'string'
+                      - Deleted enum values: [true false]
+GET /report-api/v1/private/report/{reportId}
+- Responses changed
+  - Modified response: 200
+    - Content changed
+      - Modified media type: application/json
+        - Schema changed
+          - Property 'AllOf' changed
+            - Schema #/components/schemas/ClientReportRequest modified
+              - Properties changed
+                - Modified property: additionalInfo
+                  - Properties changed
+                    - Modified property: isFirstPayment
+                      - Type changed from 'boolean' to 'string'
+                      - Deleted enum values: [true false]
+PUT /report-api/v1/private/report/{reportId}
 - Request body changed
   - Content changed
     - Modified media type: application/json
       - Schema changed
-        - Items changed
-          - Properties changed
-            - Modified property: uri_callback
-              - Pattern changed from '^(https:\/\/)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&\/\/=]*)$' to '^[- /:_.',0-9a-zA-Z]{0,200}$'
+        - Property 'OneOf' changed
+          - Schema #/components/schemas/ClientReportRequest modified
+            - Properties changed
+              - Modified property: additionalInfo
+                - Properties changed
+                  - Modified property: isFirstPayment
+                    - Type changed from 'boolean' to 'string'
+                    - Deleted enum values: [true false]
