@@ -2,18 +2,8 @@
 -----------------------
 ### Deleted Endpoints: None
 ---------------------------
-### Modified Endpoints: 5
+### Modified Endpoints: 7
 -------------------------
-POST /report-api/v1/consents/stock
-- Request body changed
-  - Content changed
-    - Modified media type: application/json
-      - Schema changed
-        - Required changed
-          - New required property: consentsStockList
-          - New required property: date
-        - Properties changed
-          - New property: date
 POST /report-api/v1/opendata/report
 - Request body changed
   - Content changed
@@ -40,8 +30,6 @@ POST /report-api/v1/private/report
                     - Modified property: isFirstPayment
                       - Type changed from 'boolean' to 'string'
                       - Deleted enum values: [true false]
-                    - Modified property: paymentType
-                      - Deleted enum values: [map[IMMEDIATE:Pix sem configuração de agendamento​] map[SCHEDULED:Pix com configuração de agendamento​] map[RECURRENT:Pix sem configuração de agendamento e configuração de recorrência​] map[SWEEPING:para todas as chamadas de pagamentos inteligentes​]]
 GET /report-api/v1/private/report/{reportId}
 - Responses changed
   - Modified response: 200
@@ -56,8 +44,6 @@ GET /report-api/v1/private/report/{reportId}
                     - Modified property: isFirstPayment
                       - Type changed from 'boolean' to 'string'
                       - Deleted enum values: [true false]
-                    - Modified property: paymentType
-                      - Deleted enum values: [map[IMMEDIATE:Pix sem configuração de agendamento​] map[SCHEDULED:Pix com configuração de agendamento​] map[RECURRENT:Pix sem configuração de agendamento e configuração de recorrência​] map[SWEEPING:para todas as chamadas de pagamentos inteligentes​]]
 PUT /report-api/v1/private/report/{reportId}
 - Request body changed
   - Content changed
@@ -71,5 +57,30 @@ PUT /report-api/v1/private/report/{reportId}
                   - Modified property: isFirstPayment
                     - Type changed from 'boolean' to 'string'
                     - Deleted enum values: [true false]
-                  - Modified property: paymentType
-                    - Deleted enum values: [map[IMMEDIATE:Pix sem configuração de agendamento​] map[SCHEDULED:Pix com configuração de agendamento​] map[RECURRENT:Pix sem configuração de agendamento e configuração de recorrência​] map[SWEEPING:para todas as chamadas de pagamentos inteligentes​]]
+POST /report-api/v2/hybrid-flow/client/redirect-to-server
+- Request body changed
+  - Content changed
+    - Modified media type: application/json
+      - Schema changed
+        - Items changed
+          - Properties changed
+            - Modified property: uriAuthorizationEndpoint
+              - Pattern changed from '^(https:\/\/)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&\/\/=]*)$' to '^[- /:_.',0-9a-zA-Z]{0,200}$'
+POST /report-api/v2/hybrid-flow/server/redirect-target
+- Request body changed
+  - Content changed
+    - Modified media type: application/json
+      - Schema changed
+        - Items changed
+          - Properties changed
+            - Modified property: uriAuthorizationEndpoint
+              - Pattern changed from '^(https:\/\/)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&\/\/=]*)$' to '^[- /:_.',0-9a-zA-Z]{0,200}$'
+POST /report-api/v2/hybrid-flow/server/redirect-to-client
+- Request body changed
+  - Content changed
+    - Modified media type: application/json
+      - Schema changed
+        - Items changed
+          - Properties changed
+            - Modified property: uri_callback
+              - Pattern changed from '^(https:\/\/)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&\/\/=]*)$' to '^[- /:_.',0-9a-zA-Z]{0,200}$'
