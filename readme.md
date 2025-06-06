@@ -7,6 +7,7 @@
 | OAS | Base | Revision | Breaking changes only | Full Diff |
 | --- | --- | --- | --- | --- |
 | metrics-collection-platform | [1.0.8](swagger-apis/metrics-collection-platform/1.0.8.yml) | [1.1.1](swagger-apis/metrics-collection-platform/1.1.1.yml) | [YAML](diffs/metrics-collection-platform/1.0.8_1.1.1-breaking-only.yml) | [YAML](diffs/metrics-collection-platform/1.0.8_1.1.1.yml) |
+|  | [1.1.1](swagger-apis/metrics-collection-platform/1.1.1.yml) | [2.0.0-beta](swagger-apis/metrics-collection-platform/2.0.0-beta.yml) | [YAML](diffs/metrics-collection-platform/1.1.1_2.0.0-beta-breaking-only.yml) | [YAML](diffs/metrics-collection-platform/1.1.1_2.0.0-beta.yml) |
 
 ### All revisions
 
@@ -25,3 +26,4 @@
 |  | [1.0.7-beta](swagger-apis/metrics-collection-platform/1.0.7-beta.yml) | [1.0.7](swagger-apis/metrics-collection-platform/1.0.7.yml) | [YAML](diffs/metrics-collection-platform/1.0.7-beta_1.0.7.yml) |
 |  | [1.0.7](swagger-apis/metrics-collection-platform/1.0.7.yml) | [1.0.8](swagger-apis/metrics-collection-platform/1.0.8.yml) | [YAML](diffs/metrics-collection-platform/1.0.7_1.0.8.yml) |
 |  | [1.0.8](swagger-apis/metrics-collection-platform/1.0.8.yml) | [1.1.1](swagger-apis/metrics-collection-platform/1.1.1.yml) | [YAML](diffs/metrics-collection-platform/1.0.8_1.1.1.yml) |
+|  | [1.1.1](swagger-apis/metrics-collection-platform/1.1.1.yml) | [2.0.0-beta](swagger-apis/metrics-collection-platform/2.0.0-beta.yml) | [YAML](diffs/metrics-collection-platform/1.1.1_2.0.0-beta.yml) |
