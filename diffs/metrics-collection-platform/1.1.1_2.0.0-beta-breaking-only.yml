@@ -2,8 +2,22 @@
 -----------------------
 ### Deleted Endpoints: None
 ---------------------------
-### Modified Endpoints: 3
+### Modified Endpoints: 7
 -------------------------
+POST /report-api/v1/consents/stock
+- Request body changed
+  - Content changed
+    - Modified media type: application/json
+      - Schema changed
+        - Properties changed
+          - Modified property: consentsStockList
+            - Items changed
+              - Properties changed
+                - Modified property: clientOrgId
+                  - Property 'AllOf' changed
+                    - 1 schemas added
+                  - Type changed from 'string' to ''
+                  - Format changed from 'uuid' to ''
 POST /report-api/v1/private/report
 - Request body changed
   - Content changed
@@ -17,6 +31,18 @@ POST /report-api/v1/private/report
                   - Properties changed
                     - Modified property: hasMinimumAmount
                       - Deleted enum values: [true false]
+                - Modified property: clientOrgId
+                  - Property 'AllOf' changed
+                    - 1 schemas added
+                  - Type changed from 'string' to ''
+                  - Format changed from 'uuid' to ''
+            - Schema #/components/schemas/ServerReportRequest modified
+              - Properties changed
+                - Modified property: clientOrgId
+                  - Property 'AllOf' changed
+                    - 1 schemas added
+                  - Type changed from 'string' to ''
+                  - Format changed from 'uuid' to ''
 GET /report-api/v1/private/report/{reportId}
 - Responses changed
   - Modified response: 200
@@ -30,6 +56,12 @@ GET /report-api/v1/private/report/{reportId}
                   - Properties changed
                     - Modified property: hasMinimumAmount
                       - Deleted enum values: [true false]
+                - Modified property: clientOrgId
+                  - Property 'AllOf' changed
+                    - 1 schemas added
+                  - Type changed from 'string' to ''
+                  - Format changed from 'uuid' to ''
+                  - MaxLength changed from 36 to null
 PUT /report-api/v1/private/report/{reportId}
 - Request body changed
   - Content changed
@@ -42,3 +74,51 @@ PUT /report-api/v1/private/report/{reportId}
                 - Properties changed
                   - Modified property: hasMinimumAmount
                     - Deleted enum values: [true false]
+              - Modified property: clientOrgId
+                - Property 'AllOf' changed
+                  - 1 schemas added
+                - Type changed from 'string' to ''
+                - Format changed from 'uuid' to ''
+          - Schema #/components/schemas/ServerReportRequest modified
+            - Properties changed
+              - Modified property: clientOrgId
+                - Property 'AllOf' changed
+                  - 1 schemas added
+                - Type changed from 'string' to ''
+                - Format changed from 'uuid' to ''
+POST /report-api/v2/hybrid-flow/client/redirect-target-with-errors
+- Request body changed
+  - Content changed
+    - Modified media type: application/json
+      - Schema changed
+        - Items changed
+          - Properties changed
+            - Modified property: clientOrgId
+              - Property 'AllOf' changed
+                - 1 schemas added
+              - Type changed from 'string' to ''
+              - Format changed from 'uuid' to ''
+POST /report-api/v2/hybrid-flow/client/redirect-target-without-errors
+- Request body changed
+  - Content changed
+    - Modified media type: application/json
+      - Schema changed
+        - Items changed
+          - Properties changed
+            - Modified property: clientOrgId
+              - Property 'AllOf' changed
+                - 1 schemas added
+              - Type changed from 'string' to ''
+              - Format changed from 'uuid' to ''
+POST /report-api/v2/hybrid-flow/client/redirect-to-server
+- Request body changed
+  - Content changed
+    - Modified media type: application/json
+      - Schema changed
+        - Items changed
+          - Properties changed
+            - Modified property: clientOrgId
+              - Property 'AllOf' changed
+                - 1 schemas added
+              - Type changed from 'string' to ''
+              - Format changed from 'uuid' to ''
