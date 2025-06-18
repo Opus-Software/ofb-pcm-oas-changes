@@ -68,19 +68,19 @@ PUT /report-api/v1/private/report/{reportId}
     - Modified media type: application/json
       - Schema changed
         - Property 'OneOf' changed
-          - Schema #/components/schemas/ServerReportRequest modified
-            - Properties changed
-              - Modified property: clientOrgId
-                - Property 'AllOf' changed
-                  - 1 schemas added
-                - Type changed from 'string' to ''
-                - Format changed from 'uuid' to ''
           - Schema #/components/schemas/ClientReportRequest modified
             - Properties changed
               - Modified property: additionalInfo
                 - Properties changed
                   - Modified property: hasMinimumAmount
                     - Deleted enum values: [true false]
+              - Modified property: clientOrgId
+                - Property 'AllOf' changed
+                  - 1 schemas added
+                - Type changed from 'string' to ''
+                - Format changed from 'uuid' to ''
+          - Schema #/components/schemas/ServerReportRequest modified
+            - Properties changed
               - Modified property: clientOrgId
                 - Property 'AllOf' changed
                   - 1 schemas added
