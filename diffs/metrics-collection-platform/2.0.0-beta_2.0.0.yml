@@ -1,1 +1,20 @@
-﻿No endpoint changes
+﻿### New Endpoints: None
+-----------------------
+### Deleted Endpoints: None
+---------------------------
+### Modified Endpoints: 2
+-------------------------
+POST /report-api/v1/credit-portabilities/client
+- Request body changed
+  - Content changed
+    - Modified media type: application/json
+      - Examples changed
+        - Modified example: Request Valido
+          - Value changed from map[clientOrgId:56411f7e-d58b-44a8-8a2b-ff326d3f2955 clientSSId:84570da9-567b-4201-9b77-c715bc5bffde contractId:92792126019929279212650822221989319252576 correlationId:uGQHwNupARo7I9E2PLJZph18a0M9y7DcUe7ITt3DqUOJd9NVjnskxf2 creationDateTime:2020-07-21T08:30:00Z creditPortabilityStatus:PENDING endpoint:/open-banking/consents/v2/consents endpointUriPrefix:https://openbanking.instituicao-1.com.br/opbk fapiInteractionId:d78fc4e5-37ca-4da3-adf2-9b082bf92280 httpMethod:POST originalContractCET:0.290000 originalContractTerm:57 originalPropositionCET:0.290000 portabilityId:54d5348c-1a3f-4ff4-a8a8-d0724fb806c6 processTimespan:120 productSubTypeCategory:CREDITO_PESSOAL_CLEAN propositionTerm:30 rejectedBy:PROPONENTE rejectionReason:CANCELADO_PELO_CLIENTE role:CLIENT serverOrgId:c1ca8e62-9d6f-4ea3-84f2-d66bc0a8f7dc statusCode:200 statusUpdateDateTime:2020-07-21T08:30:00Z timestamp:2021-11-11T18:08:08.894Z] to map[clientOrgId:{{organization_id}} clientSSId:84570da9-567b-4201-9b77-c715bc5bffde contractId:92792126019929279212650822221989319252576 correlationId:uGQHwNupARo7I9E2PLJZph18a0M9y7DcUe7ITt3DqUOJd9NVjnskxf2 creationDateTime:2020-07-21T08:30:00Z creditPortabilityStatus:PENDING endpoint:/credit-operations/{contractId}/portability-eligibility endpointUriPrefix:https://openbanking.instituicao-1.com.br/opbk fapiInteractionId:d78fc4e5-37ca-4da3-adf2-9b082bf92280 httpMethod:POST originalContractCET:0.290000 originalContractTerm:57 originalPropositionCET:0.290000 portabilityId:54d5348c-1a3f-4ff4-a8a8-d0724fb806c6 processTimespan:120 productSubTypeCategory:CREDITO_PESSOAL_CLEAN propositionTerm:30 rejectedBy:PROPONENTE rejectionReason:CANCELADO_PELO_CLIENTE role:CLIENT serverOrgId:{{client_id}} statusCode:200 statusUpdateDateTime:2020-07-21T08:30:00Z timestamp:{{timestamp}}]
+POST /report-api/v1/credit-portabilities/server
+- Request body changed
+  - Content changed
+    - Modified media type: application/json
+      - Examples changed
+        - Modified example: Request Valido
+          - Value changed from map[clientOrgId:56411f7e-d58b-44a8-8a2b-ff326d3f2955 endpoint:/open-banking/consents/v2/consents fapiInteractionId:d78fc4e5-37ca-4da3-adf2-9b082bf92280 httpMethod:POST processTimespan:120 rejectedBy:PROPONENTE rejectionReason:CANCELADO_PELO_CLIENTE reportId:424ad55c-36cc-4077-b85e-c22ea984cc4a role:SERVER serverOrgId:c1ca8e62-9d6f-4ea3-84f2-d66bc0a8f7dc status:PENDING statusCode:200 statusUpdateDateTime:2020-07-21T08:30:00Z timestamp:2021-11-11T18:08:08.894Z] to map[clientOrgId:56411f7e-d58b-44a8-8a2b-ff326d3f2955 endpoint:/credit-operations/{contractId}/portability-eligibility fapiInteractionId:d78fc4e5-37ca-4da3-adf2-9b082bf92280 httpMethod:POST processTimespan:120 rejectedBy:CREDORA rejectionReason:CANCELED reportId:424ad55c-36cc-4077-b85e-c22ea984cc4a role:SERVER serverOrgId:c1ca8e62-9d6f-4ea3-84f2-d66bc0a8f7dc status:PENDING statusCode:200 statusUpdateDateTime:2020-07-21T08:30:00Z timestamp:2021-11-11T18:08:08.894Z]
