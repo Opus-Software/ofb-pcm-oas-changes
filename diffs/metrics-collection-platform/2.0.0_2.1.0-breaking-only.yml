@@ -1,0 +1,12 @@
+﻿### New Endpoints: None
+-----------------------
+### Deleted Endpoints: 1
+------------------------
+PUT /report-api/v1/private/report/{reportId}  
+### Modified Endpoints: 2
+-------------------------
+GET /report-api/v1/credit-portabilities/{fapiInteractionId}
+- New path param: fapiInteractionId
+- Deleted path param: reportId
+GET /report-api/v1/private/report/{reportId}
+- Modified path param: reportId
